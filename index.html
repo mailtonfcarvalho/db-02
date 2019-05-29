@@ -3,24 +3,25 @@
     <head>
         <title>Controle de Concorrencia</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="script.js"> </script>
 
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="script.js"> </script>
     </head>
     <body>
         <h2>Controle de Concorrencia</h2>
 
         <div class="panel1">
-            
-            <button type="button" onclick="alerta()"> Teste</button>
 
+            <button type="button" onclick="alerta()">Cadastrar</button>
+            <div id="logs"></div>
         </div>
-        
+
         <div class="panel2">
             <div class="col">
                 <h3>Tabela de Bloqueio</h3>
             </div>
-            
-            <table id="log">
+
+            <table id="lock">
                 <thead>
                     <tr>
                         <th>Nome_item</th>
@@ -29,24 +30,26 @@
                         <th>Bloqueio_transicao</th>
                     </tr>
                 </thead>
+                <tbody id="lock"></tbody>
             </table>
         </div>
 
         <div class="panel3">
             <div class="col">
-                <h3>Dados</h3>
+                <h3>Memória</h3>
             </div>
 
-            <table id="log">
-                    <thead>
-                        <tr>
-                            <th>Variavel</th>
-                            <th>Valor</th>
-                        </tr>
-                    </thead>
-                </table>
-        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variavel</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="memory"></tbody>
+            </table>
+
         </div>
-            
+
     </body>
 </html>

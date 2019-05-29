@@ -4,7 +4,7 @@ body {
     font-size: 0.9em;
     background: #f5e575;
   }
-  
+
   .panel1 {
     background: white;
     position:relative;
@@ -42,11 +42,11 @@ body {
     position: relative;
     margin: auto;
   }
-  
+
   thead tr {
     background: bisque;
   }
-  
+
   th, td {
     border: 1px solid black;
     padding: 4px;
@@ -55,5 +55,7 @@ body {
   .col h3 {
     margin-left:10px;
 }
-  
-  
+
+.item-log {
+    padding: 5px 10px;
+}
