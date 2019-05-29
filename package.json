@@ -1,0 +1,22 @@
+{
+  "name": "db-02",
+  "version": "1.0.0",
+  "description": "This is a project for the master degree class Banco de Dados at CIn/UFPE. Year 2019.1.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mailtonfcarvalho/db-02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mailtonfcarvalho/db-02/issues"
+  },
+  "homepage": "https://github.com/mailtonfcarvalho/db-02#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
