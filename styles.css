@@ -5,6 +5,15 @@ body {
     background: #f5e575;
   }
 
+  .panel0 {
+    background: white;
+    position:relative;
+    width: 1240px;
+    height: 100px;
+    left:20px;
+    margin-top: 1em;
+  }
+
   .panel1 {
     background: white;
     position:relative;
@@ -58,4 +67,8 @@ body {
 
 .item-log {
     padding: 5px 10px;
+}
+.box{
+  padding: 5px 10px;
+  
 }
