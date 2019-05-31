@@ -34,8 +34,8 @@ function write_lock(transaction, variable) {
 	$('#lock').append(`<tr variable=${variable}>
 		<td>${variable}</td>
 		<td class="lock-type">WRITE</td>
-		<td>-</td>
-		<td>${transaction}</td>
+		<td class="lock-qtd">-</td>
+		<td class="lock-transactions">${transaction}</td>
 	</tr>`);
 	return true;
 }
@@ -78,4 +78,78 @@ function read_lock(transaction, variable) {
 	return true;
 }
 
+function can_read(transaction, variable) {
+	let selector = $(`#lock tr[variable=${variable}]`);
+	if (!selector.length) {
+		return false;
+	}
+
+	let lock_transactions = selector
+		.find('.lock-transactions')
+		.html()
+		.split(', ');
+
+	if (lock_transactions.indexOf(transaction) == -1) {
+		return false;
+	}
+
+	return true;
+}
+
+function can_write(transaction, variable) {
+	let selector = $(`#lock tr[variable=${variable}]`);
+	if (!selector.length) {
+		return false;
+	}
+
+	let lock_type = selector.find('.lock-type').html();
+	if (lock_type !== 'WRITE') {
+		return false;
+	}
+
+	let lock_transactions = selector
+		.find('.lock-transactions')
+		.html()
+		.split(', ');
+
+	if (lock_transactions.indexOf(transaction) == -1) {
+		return false;
+	}
+
+	return true;
+}
+
+function unlock(transaction, variable) {
+	let selector = $(`#lock tr[variable=${variable}]`);
+	if (!selector.length) {
+		return false;
+	}
+
+	let lock_transactions = selector
+		.find('.lock-transactions')
+		.html()
+		.split(', ');
+
+	if (lock_transactions.indexOf(transaction) == -1) {
+		return false;
+	}
+
+	lock_transactions = lock_transactions.filter(function(value, index, arr){
+    return value != transaction;
+  });
+
+	selector
+		.find('.lock-qtd')
+		.html(lock_transactions.length);
+
+  selector
+		.find('.lock-transactions')
+		.html(lock_transactions.join(', '));
+
+	if (lock_transactions.length == 0) {
+		selector.remove();
+	}
+
+	return true;
+}
 
