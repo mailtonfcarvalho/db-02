@@ -15,46 +15,44 @@
     <body>
         <header>
             <div class="panel0">
-                
-                <div id="container">                    
-                    <div id="box-2" class="box">
-                        <select name="Lock_Unlock">
-                            <option>Bloqueio</option>
-                            <option>Read_Lock</option>
-                            <option>White_lock</option>
-                            <option>Unlock</option>  
+
+                <form class="container" id="new-command">
+                    <div id="box-1" class="box">
+                        <label>Transação:</label>
+                        <select name="transaction">
+                            <option>T1</option>
+                            <option>T2</option>
+                            <option>T3</option>
                         </select>
                     </div>
 
-                    <div id="box-3" class="box">
-                            <select name="Lock_Unlock">
-                                <option>Operação</option>
-                                <option>Read_item</option>
-                                <option>White_item</option>
-                            </select>
+                    <div id="box-2" class="box">
+                        <label>Operação:</label>
+                        <select name="operation">
+                            <option>read_lock</option>
+                            <option>write_lock</option>
+                            <option>unlock</option>
+                            <option>read_item</option>
+                            <option>write_item</option>
+                        </select>
                     </div>
 
-                    <div id="box-1" class="box">
-                        <label for="valor">Transacão:</label>
-                        <input type="text" id="valor" name="valor" required
-                            minlength="1" maxlength="4" size="7">
-                        </div>
                     <div id="box-4" class="box">
-                        <label for="valor">Variavel:</label>
-                        <input type="text" id="variavel" name="variavel" required
+                        <label for="variable">Variável:</label>
+                        <input type="text" id="variable" name="variable" required
                             minlength="1" maxlength="4" size="7">
                     </div>
 
-                    <div id="box-5" class="box">
-                        <label for="variavel">Valor:</label>
-                        <input type="text" id="variavel" name="variavel" required
+                    <div id="box-5" class="box box-value">
+                        <label for="value">Valor:</label>
+                        <input type="text" id="value" name="value" required
                                minlength="1" maxlength="4" size="7">
                     </div>
 
                     <div id="box-6" class="box">
-                            <button type="button" onclick="" style="background-color: #75b7f5"> Cadastrar</button>
+                        <button type="submit" style="background-color: #75b7f5"> Cadastrar</button>
                     </div>
-                </div>
+                </form>
             </div>
         </header>
 
@@ -63,17 +61,17 @@
                     <div class="col">
                             <h3>Logs</h3>
                         </div>
-                    
+
                     <div id="logs">
-                        
+
                     </div>
             </div>
-        
+
             <div class="panel2">
                 <div class="col">
                     <h3>Tabela de Bloqueio</h3>
                 </div>
-        
+
                 <table id="lock">
                      <thead>
                         <tr>
@@ -86,7 +84,7 @@
                     <tbody id="lock"></tbody>
                 </table>
             </div>
-        
+
             <div class="panel3">
                 <div class="col">
                     <h3>Memória</h3>
