@@ -9,9 +9,9 @@ $ https://github.com/mailtonfcarvalho/db-02.git
 
 ### Project Specification
 
-This project is the specification of the Concurrency Control Techniques of DBMSs. Here is used a control techniques that are used to ensure the noninterference or isolation property of concurrently executing transactions.
+This project is the specification of the Concurrency Control Technique of DBMS. Here is used a control technique that are used to ensure the noninterference or isolation property of concurrently executing transactions.
 
-The technique used is shared/exclusive locking scheme. When we use the  the system must enforce the following rules:
+The technique used is shared/exclusive locking scheme. When we use the the system must enforce the following rules:
 
 1. A transaction T must issue the operation read_lock(X) or write_lock(X) before any read_item(X) operation is performed in T.
 2. A transaction T must issue the operation write_lock(X) before any write_item(X) operation is performed in T.
