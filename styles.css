@@ -4,49 +4,60 @@ body {
     background: #75b7f5;
 }
 header{
-  position: fixed;
+  position: relative;
   width: 80%;
+  height: 80px;
   margin-left: 10%;
 }
 main{
-  top: 160px;
-  position: fixed;
+  margin-top: 1%;
+  position: relative;
   width: 80%;
+  height: 450px;
   margin-left: 10%;
+}
+footer{
+  position: relative;
+  width: 80%;
+  height:10px;
+  margin-left:10%;
+  background: white;
 }
 .titulo {
  margin-left: 10%;
  color: rgb(1, 4, 19);
-
 }
 .panel0 {
   background: white;
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 100%;
 }
 .panel1 {
   background: white;
   position: relative;
   float:left;
   width: 25%;
-  height: 500px;
+  height: 100%;
+  overflow:auto; 
 }
 .panel2 {
   background: white;
   position: relative;
   float:left;
   width: 48%;
-  height: 500px;
+  height: 100%;
   margin-left: 1%;
+  overflow:auto;
 }
 .panel3 {
   background: white;
   position: relative;
   float:left;
   width: 25%;
-  height: 500px;
+  height: 100%;
   margin-left: 1%;
+  overflow:auto;
 }
 table {
   border-spacing: 0;
