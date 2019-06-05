@@ -54,7 +54,7 @@
                     </div>
 
                     <div id="box-6" class="box">
-                        <button type="submit" style="background-color: #75b7f5"> Cadastrar</button>
+                        <button type="submit" style="background-color: #75b7f5"> Go </button>
                     </div>
                 </form>
             </div>
@@ -73,7 +73,7 @@
 
             <div class="panel2">
                 <div class="col">
-                    <h3>Tabela de Bloqueio</h3>
+                    <h3>Locking Table</h3>
                 </div>
 
                 <table id="lock">
@@ -81,8 +81,8 @@
                         <tr>
                             <th>Item</th>
                             <th>Lock</th>
-                            <th>nº Leitura</th>
-                            <th>Bloqueio_transicao</th>
+                            <th>Reading number</th>
+                            <th>Transaction lockout</th>
                         </tr>
                     </thead>
                     <tbody id="lock"></tbody>
@@ -91,15 +91,15 @@
 
             <div class="panel3">
                 <div class="col">
-                    <h3>Memória</h3>
+                    <h3>Memory</h3>
                 </div>
 
                 <table>
                     <thead>
                         <tr>
-                            <th>Transação</th>
-                            <th>Variável</th>
-                            <th>Valor</th>
+                            <th>Transaction</th>
+                            <th>Variable</th>
+                            <th>Value</th>
                         </tr>
                     </thead>
                     <tbody id="memory"></tbody>
@@ -110,7 +110,7 @@
                     <h3>Status</h3>
                 </div>
                 <div id="box-6">
-                        <label class="nome">Transação:</label>
+                        <label class="nome">Transaction:</label>
                         <select name="transaction" class="status">
                             <option>T1</option>
                             <option>T2</option>
@@ -121,7 +121,7 @@
                 <input type="radio" name="status" value="commit" class="radio">Commit<br>
                 <input type="radio" name="status" value="abort" class="radio">Abort<br>
 
-                <button type="submit" class= "botton"> Executar</button>
+                <button type="submit" class= "botton"> run </button>
 
             </div>
 
@@ -133,9 +133,8 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Transação</th>
-                                <th>Variável</th>
-                                <th>Valor</th>
+                                <th>Variable</th>
+                                <th>Value</th>
                             </tr>
                         </thead>
                         <tbody id="memory"></tbody>
