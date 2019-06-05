@@ -31,7 +31,7 @@ $(function() {
 			case 'write_item':
 				next = can_write(transaction, variable);
 				if (next) {
-					edit_memory(variable, value);
+					edit_memory(transaction,variable, value);
 				}
 				break;
 		}
@@ -41,12 +41,12 @@ $(function() {
 	})
 });
 
-function edit_memory(variable, value) {
+function edit_memory(transaction, variable, value) {
 	let selector = $(`#memory tr[data=${variable}]`);
 	if (selector.length) {
 		selector.find('.memory-value').html(value);
 	} else {
-		$('#memory').append(`<tr data=${variable}><td>${variable}</td><td class="memory-value">${value}</td></tr>`);
+		$('#memory').append(`<tr data=${variable}><td id=${transaction}>${transaction}</td><td>${variable}</td><td class="memory-value">${value}</td></tr>`);
 	}
 }
 

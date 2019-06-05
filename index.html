@@ -19,6 +19,8 @@
             <div class="panel0">
 
                 <form class="container" id="new-command">
+                 
+                <form class="container" id="new-command">
                     <div id="box-1" class="box">
                         <label>Transação:</label>
                         <select name="transaction">
@@ -95,13 +97,41 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Variavel</th>
+                            <th>Transação</th>
+                            <th>Variável</th>
                             <th>Valor</th>
                         </tr>
                     </thead>
                     <tbody id="memory"></tbody>
                 </table>
             </div>
+            <div class="panel4">
+                <div class="col">
+                    <h3>Satus</h3>
+                </div>
+                <div id="box-1" class="box">
+                        <label>Transação:</label>
+                        <select name="transaction">
+                            <option>T1</option>
+                            <option>T2</option>
+                            <option>T3</option>
+                        </select>
+                </div>
+
+                <input type="radio" name="status" value="commit">Commit<br>
+                <input type="radio" name="status" value="abort">Abort<br>
+
+                <button type="submit" style="background-color: #75b7f5"> Executar</button>
+
+            </div>
+
+    
+            <div class="panel5">
+                    <div class="col">
+                        <h3>Disk</h3>
+                    </div>
+            </div>
+
        </main>
        <footer>
           
