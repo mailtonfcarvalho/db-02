@@ -49,7 +49,7 @@ footer{
   background: white;
   position: relative;
   float:left;
-  width: 40%;
+  width: 35%;
   height: 100%;
   margin-left: 1%;
   overflow:auto;
@@ -58,8 +58,8 @@ footer{
   background: white;
   position: relative;
   float:left;
-  width: 25.5%;
-  height: 60%;
+  width: 30.5%;
+  height: 50%;
   margin-left: 1%;
   overflow:auto;
 }
@@ -69,7 +69,7 @@ footer{
   float:left;
   margin-left: 0.5%;
   width: 12%;
-  height: 60%;
+  height: 50%;
   overflow:auto;
   border-radius:0px 7px 0px 0px; 
 }
@@ -77,8 +77,8 @@ footer{
   background: white;
   position: relative;
   float:left;
-  width: 38%;
-  height: 39%;
+  width: 43%;
+  height: 48%;
   margin-left: 1%;
   margin-top: 1%;
   overflow:auto;
