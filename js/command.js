@@ -1,4 +1,12 @@
+/**
+ * funcao para aguardar carregamento de todo o código para atribuir os eventos
+ * e fazer as primeiras lógicas
+ */
 $(function() {
+	/**
+	 * funcao que pega o evento de mudanca de operacao e mostra os campos de
+	 * acordo com o que sera executado
+	 */
 	$('#new-command [name=operation]').change(function() {
 		let lock_field = $(this).val() != 'write_item';
 
@@ -21,6 +29,11 @@ $(function() {
 			.toggle(!lock_field);
 	}).change();
 
+	/**
+	 * funcao que pega o evento de execucao de um comando
+	 * - trata as variaveis
+	 * - chama funcao externa para operacao
+	 */
 	$('#new-command').submit(function(ev) {
 		ev.preventDefault();
 		let transaction = $('#new-command [name=transaction]').val();
@@ -31,9 +44,16 @@ $(function() {
 		run_command(transaction, operation, variable, value);
 	});
 
+	/**
+	 * carrega dados persistentes no disco
+	 */
 	reload_disk();
 });
 
+/**
+ * executa o comando enviado e faz todos os tratamentos usando as funcoes
+ * dos controles
+ */
 function run_command(transaction, operation, variable, value) {
 	let next = false;
 	switch(operation) {
@@ -138,11 +158,17 @@ function run_command(transaction, operation, variable, value) {
 	}
 }
 
-// Wait-die - se a transação que solicitou o acesso é a mais antiga, pode
-// aguardar. Se for a mais nova, sofre rollback e recomeça mais tarde com
-// mesmo timestamp.
+/**
+ * implementa regra wait-die: se a transação que solicitou o acesso é a
+ * mais antiga, pode aguardar. Se for a mais nova, sofre rollback e recomeça
+ * mais tarde com mesmo timestamp.
+ * - pega todas as transacoes que estao bloqueando uma variavel
+ * - verifica se tem alguma com mais prioridade (de acordo com o tempo) que a
+ *   que solicitou o bloqueio
+ * - se existir alguma, faz um tratamento rollback guardando o timestamp da
+ *   trasacao
+ */
 function wait_die(transaction, variable) {
-	console.log('wait_die', transaction, variable);
 	let transactions = get_transsactions_locking(variable);
 	let die = false;
 	for(let i in transactions) {
