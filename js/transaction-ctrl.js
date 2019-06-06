@@ -34,3 +34,26 @@ function end_transaction(transaction) {
 	return true;
 }
 
+function has_transaction(transaction) {
+	let selector = $(`#transaction tr[data=${transaction}]`);
+	if (!selector.length) {
+		alert(`A transação ${transaction} não foi iniciada`);
+		return false;
+	}
+	return true;
+}
+
+function can_transaction(transaction, state) {
+	let selector = $(`#transaction tr[data=${transaction}]`);
+	if (!selector.length) {
+		alert(`A transação ${transaction} não foi iniciada`);
+		return false;
+	}
+	let current_state = selector.find('.state').html();
+	if (current_state !== state) {
+		alert(`A transação ${transaction} está na fase de ${current_state}`);
+		return false;
+	}
+
+	return true;
+}
