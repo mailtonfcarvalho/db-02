@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mailtonfcarvalho/db-02#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0"
   }
 }
