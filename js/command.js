@@ -38,5 +38,7 @@ $(function() {
 		if (next) {
 			add_logs(transaction, operation, variable, value)
 		}
-	})
+	});
+
+	reload_disk();
 });
