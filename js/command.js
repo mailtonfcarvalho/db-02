@@ -1,7 +1,21 @@
 $(function() {
 	$('#new-command [name=operation]').change(function() {
 		let lock_field = $(this).val() != 'write_item';
+
 		$('#new-command [name=value]')
+			.prop('disabled', lock_field)
+			.closest('.box')
+			.toggle(!lock_field);
+
+
+		lock_field = [
+			'begin_transaction',
+			'commit',
+			'abort',
+			'end_transaction',
+		].indexOf($(this).val()) != -1;
+
+		$('#new-command [name=variable]')
 			.prop('disabled', lock_field)
 			.closest('.box')
 			.toggle(!lock_field);
