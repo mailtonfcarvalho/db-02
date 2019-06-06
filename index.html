@@ -36,8 +36,14 @@
                             <option>read_lock</option>
                             <option>write_lock</option>
                             <option>unlock</option>
+                            <option disabled>-----</option>
                             <option>read_item</option>
                             <option>write_item</option>
+                            <option disabled>-----</option>
+                            <option>Begin</option>
+                            <option>commit</option>
+                            <option>Abort</option>
+                            <option>End</option>
                         </select>
                     </div>
 
@@ -91,6 +97,22 @@
 
             <div class="panel3">
                 <div class="col">
+                    <h3>Transaction Status</h3>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction</th>
+                            <th>Timestamp</th>
+                            <th>State</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="panel4">
+                <div class="col">
                     <h3>Memory</h3>
                 </div>
 
@@ -105,7 +127,22 @@
                     <tbody id="memory"></tbody>
                 </table>
             </div>
-            <div class="panel4">
+
+            <div class="panel5">
+                <div class="col">
+                    <h3>Disk</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="memory"></tbody>
+                </table>
+            </div>
+            <!-- <div class="panel4">
                 <div class="col">
                     <h3>Status</h3>
                 </div>
@@ -123,10 +160,8 @@
 
                 <button type="submit" class= "botton"> run </button>
 
-            </div>
-
-    
-            <div class="panel5">
+            </div> -->
+            <!-- <div class="panel5">
                 <div class="col">
                     <h3>Disk</h3>
                 </div>
@@ -140,7 +175,7 @@
                         <tbody id="memory"></tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
 
        </main>
        <footer>
