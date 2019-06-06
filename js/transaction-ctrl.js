@@ -1,3 +1,8 @@
+/**
+ * inicia transacao
+ * - verifica se a transacao ja foi iniciada
+ * - verifica se a transacao foi encerrada com wait-die para pegar o timestemp
+ */
 function begin_transaction(transaction) {
 	let selector = $(`#transaction tr[data=${transaction}]`);
 	let timestamp = moment().format();
@@ -22,6 +27,11 @@ function begin_transaction(transaction) {
 	return true;
 }
 
+/**
+ * muda o estado de uma trasacao
+ * - valida estados válidos para transacoes
+ * - se for para wait-die, esconde para guardar o timestamp
+ */
 function change_transaction(transaction, state) {
 	if (['locking', 'unlocking', 'finished', 'wait-die'].indexOf(state) == -1) {
 		alert(`Estado ${state} inválido`);
@@ -39,6 +49,9 @@ function change_transaction(transaction, state) {
 	return true;
 }
 
+/**
+ * encerra a transacao
+ */
 function end_transaction(transaction) {
 	let selector = $(`#transaction tr[data=${transaction}]`);
 	if (!selector.length) {
@@ -49,6 +62,9 @@ function end_transaction(transaction) {
 	return true;
 }
 
+/**
+ * verifica se existe a transacao
+ */
 function has_transaction(transaction) {
 	let selector = $(`#transaction tr[data=${transaction}]`);
 	if (!selector.length) {
@@ -58,6 +74,9 @@ function has_transaction(transaction) {
 	return true;
 }
 
+/**
+ * verifica se a transacao está em um determinado estado
+ */
 function can_transaction(transaction, state) {
 	let selector = $(`#transaction tr[data=${transaction}]`);
 	if (!selector.length) {
