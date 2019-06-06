@@ -1,3 +1,8 @@
+/**
+ * modifica variavel no disco
+ * - salva direto na persistencia
+ * - chama funcao de recarregar
+ */
 function edit_disk(variable, value) {
 	let disk = JSON.parse(localStorage.getItem('disk') || '{}');
 	disk[variable] = value;
@@ -7,6 +12,9 @@ function edit_disk(variable, value) {
 	return true;
 }
 
+/**
+ * recarrega a exibição de acordo com o que ta na persistencia
+ */
 function reload_disk() {
 	let disk = JSON.parse(localStorage.getItem('disk') || '{}');
 	let html_disk = $('#disk').empty();
@@ -17,4 +25,3 @@ function reload_disk() {
 	}
 	return true;
 }
-
