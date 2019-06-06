@@ -73,6 +73,12 @@ function can_transaction(transaction, state) {
 	return true;
 }
 
+/**
+ * Verifica se a transactionA tem prioridade sobre a transactionB
+ * de acordo com o timestemp
+ *
+ * a prioridade é da transacao mais antiga, ou seja, timestemp menor
+ */
 function priority_transaction(transactionA, transactionB) {
 	let timestampA = $(`#transaction tr[data=${transactionA}] .timestamp`).html();
 	let timestampB = $(`#transaction tr[data=${transactionB}] .timestamp`).html();
