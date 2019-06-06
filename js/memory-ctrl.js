@@ -11,6 +11,10 @@ function delete_memory(variable) {
 	$(`#memory tr[data=${variable}]`).remove();
 }
 
+function delete_items_transaction_in_memory(transaction) {
+	$(`#memory tr[data-transaction=${transaction}]`).remove();
+}
+
 function has_items_in_memory(transaction) {
 	return $(`#memory tr[data-transaction=${transaction}]`).length > 0;
 }

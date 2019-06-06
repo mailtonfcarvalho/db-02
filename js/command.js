@@ -35,6 +35,7 @@ $(function() {
 				if (next) {
 					next = can_transaction(transaction, 'locking');
 				}
+				// colocar regra do wait-die
 				if (next) {
 					next = read_lock(transaction, variable);
 				}
@@ -45,6 +46,7 @@ $(function() {
 				if (next) {
 					next = can_transaction(transaction, 'locking');
 				}
+				// colocar regra do wait-die
 				if (next) {
 					next = write_lock(transaction, variable);
 				}
@@ -80,21 +82,31 @@ $(function() {
 				break;
 
 			case 'end_transaction':
-				// verificar se a transacao tem bloqueio ativo... [implementar]
-				next = end_transaction(transaction);
+				next = check_has_not_locking(transaction);
+				if (next) {
+					if (has_items_in_memory(transaction)) {
+						change_transaction(transaction, 'finished');
+					} else {
+						next = end_transaction(transaction);
+					}
+				}
 				break;
 
 			case 'commit':
-				// verifica se existe transacao
-				// verifica estado da transacao
-				// passar dados para o disco
+				next = has_transaction(transaction);
+				if (next) {
+					next = can_transaction(transaction, 'finished');
+				}
+				// passar os dados para o disco
 				break;
 
 			case 'abort':
-				// verifica se existe transacao
-				// apaga tudo da transacao do locking table
-				// apaga tudo da transacao na memoria
-				// apaga a transacao
+				next = has_transaction(transaction);
+				if (next) {
+					transaction_unlock(transaction);
+					delete_items_transaction_in_memory(transaction);
+					end_transaction(transaction);
+				}
 				break;
 		}
 		if (next) {

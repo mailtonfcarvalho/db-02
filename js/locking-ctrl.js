@@ -147,3 +147,19 @@ function check_has_not_locking(transaction) {
 	}
 	return true;
 }
+
+function transaction_unlock(transaction) {
+	let selector = $('#lock tr');
+	for (var i = 0; i < selector.length; i++) {
+		let lock_transactions = selector
+			.eq(i)
+			.find('.lock-transactions')
+			.html()
+			.split(', ');
+
+		if (lock_transactions.indexOf(transaction) != -1) {
+			unlock(transaction, selector.eq(i).attr('variable'));
+		}
+	}
+	return true;
+}
