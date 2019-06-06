@@ -135,3 +135,15 @@ function unlock(transaction, variable) {
 
 	return true;
 }
+
+function check_has_not_locking(transaction) {
+	let selector = $('#lock .lock-transactions');
+	for (var i = 0; i < selector.length; i++) {
+		let lock_transactions = selector.eq(i).html().split(', ');
+		if (lock_transactions.indexOf(transaction) != -1) {
+			alert(`A transacao ${transaction} possui bloqueios ativos`);
+			return false;
+		}
+	}
+	return true;
+}
