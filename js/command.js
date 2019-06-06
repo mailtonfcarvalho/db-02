@@ -97,7 +97,9 @@ $(function() {
 				if (next) {
 					next = can_transaction(transaction, 'finished');
 				}
-				// passar os dados para o disco
+				if (next) {
+					commit_memory(transaction);
+				}
 				break;
 
 			case 'abort':

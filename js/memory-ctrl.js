@@ -18,3 +18,13 @@ function delete_items_transaction_in_memory(transaction) {
 function has_items_in_memory(transaction) {
 	return $(`#memory tr[data-transaction=${transaction}]`).length > 0;
 }
+
+function commit_memory(transaction) {
+	let selector = $(`#memory tr[data-transaction=${transaction}]`);
+	for (var i = 0; i < selector.length; i++) {
+		let variable = selector.eq(i).attr('data');
+		let value = selector.eq(i).find('.memory-value').html();
+		edit_disk(variable, value);
+		delete_memory(variable);
+	}
+}
