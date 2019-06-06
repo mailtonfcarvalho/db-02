@@ -8,13 +8,17 @@ function begin_transaction(transaction) {
 		`<tr data=${transaction}>
 			<td>${transaction}</td>
 			<td>${moment().format()}</td>
-			<td class="state">blocking</td>
+			<td class="state">locking</td>
 		</tr>`
 	);
 	return true;
 }
 
 function change_transaction(transaction, state) {
+	if (['locking', 'unlocking', 'finished'].indexOf(state) == -1) {
+		alert(`Estado ${state} inválido`);
+		return false
+	}
 	let selector = $(`#transaction tr[data=${transaction}]`);
 	if (!selector.length) {
 		alert(`A transação ${transaction} não foi iniciada`);
