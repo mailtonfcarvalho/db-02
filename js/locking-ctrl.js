@@ -150,7 +150,7 @@ function check_has_not_locking(transaction) {
 
 function transaction_unlock(transaction) {
 	let selector = $('#lock tr');
-	for (var i = 0; i < selector.length; i++) {
+	for (let i = 0; i < selector.length; i++) {
 		let lock_transactions = selector
 			.eq(i)
 			.find('.lock-transactions')
@@ -162,4 +162,13 @@ function transaction_unlock(transaction) {
 		}
 	}
 	return true;
+}
+
+function get_transsactions_locking(variable) {
+	let selector = $(`#lock tr[variable=${variable}]`);
+
+	return selector
+		.find('.lock-transactions')
+		.html()
+		.split(', ');
 }

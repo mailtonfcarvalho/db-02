@@ -10,6 +10,7 @@ function add_logs(transaction, operation, variable, value) {
 		'commit',
 		'abort',
 		'end_transaction',
+		'rollback',
 	].indexOf(operation) == -1 ? variable : '';
 
 	$('#logs').append(`<div class="item-log">
