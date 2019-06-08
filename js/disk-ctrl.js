@@ -11,6 +11,14 @@ function edit_disk(variable, value) {
 	reload_disk();
 	return true;
 }
+/**
+ * Deleta todos os dados na persistencia
+ */
+function delete_disk() {
+	localStorage.removeItem('disk');
+	reload_disk();
+	return true;
+}
 
 /**
  * recarrega a exibição de acordo com o que ta na persistencia
