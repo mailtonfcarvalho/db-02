@@ -1,10 +1,11 @@
+//Add bloqueio tipo write_lock
 function write_lock(transaction, variable) {
 	let selector = $(`#lock tr[variable=${variable}]`);
 	if (selector.length) {
 		alert('A variável já possui um bloqueio');
 		return false;
 	}
-
+	// quando nao tem bloqueio
 	$('#lock').append(`<tr variable=${variable}>
 		<td>${variable}</td>
 		<td class="lock-type">WRITE</td>
@@ -13,7 +14,7 @@ function write_lock(transaction, variable) {
 	</tr>`);
 	return true;
 }
-
+//Add bloqueio tipo read_lock
 function read_lock(transaction, variable) {
 	let selector = $(`#lock tr[variable=${variable}]`);
 
@@ -53,7 +54,7 @@ function read_lock(transaction, variable) {
 
 	return true;
 }
-
+// Verifica se é possivel ler a variavel
 function can_read(transaction, variable) {
 	let selector = $(`#lock tr[variable=${variable}]`);
 	if (!selector.length) {
@@ -73,7 +74,7 @@ function can_read(transaction, variable) {
 
 	return true;
 }
-
+// Verificar se pode escrever na variavel
 function can_write(transaction, variable) {
 	let selector = $(`#lock tr[variable=${variable}]`);
 	if (!selector.length) {
@@ -99,7 +100,7 @@ function can_write(transaction, variable) {
 
 	return true;
 }
-
+//desbloquear uma variavel
 function unlock(transaction, variable) {
 	let selector = $(`#lock tr[variable=${variable}]`);
 	if (!selector.length) {
@@ -135,7 +136,7 @@ function unlock(transaction, variable) {
 
 	return true;
 }
-
+//vericar se a rtansação não possui bloqueio
 function check_has_not_locking(transaction) {
 	let selector = $('#lock .lock-transactions');
 	for (var i = 0; i < selector.length; i++) {
@@ -147,7 +148,7 @@ function check_has_not_locking(transaction) {
 	}
 	return true;
 }
-
+//desbloquear uma transação
 function transaction_unlock(transaction) {
 	let selector = $('#lock tr');
 	for (let i = 0; i < selector.length; i++) {
@@ -163,7 +164,7 @@ function transaction_unlock(transaction) {
 	}
 	return true;
 }
-
+//Obter uma trtansação bloqueada
 function get_transsactions_locking(variable) {
 	let selector = $(`#lock tr[variable=${variable}]`);
 
