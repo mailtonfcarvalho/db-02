@@ -157,6 +157,9 @@ function run_command(transaction, operation, variable, value) {
 	if (next) {
 		add_log_memory(transaction, operation, variable, value)
 	}
+	if (next && ['abort', 'commit'].indexOf(operation) != -1) {
+		push_log_to_disk(transaction);
+	}
 }
 
 /**

@@ -38,10 +38,12 @@ function reload_log_memory() {
 }
 
 function push_log_to_disk(transaction) {
-	for (let i in list_logs_memory) {
+	for (let i = 0 ; i < list_logs_memory.length ; i++) {
 		if (list_logs_memory[i].transaction == transaction) {
-			add_log_memory(list_logs_memory[i]); // coloca no log do disco
+			add_log_disk(list_logs_memory[i]); // coloca no log do disco
 			list_logs_memory.splice(i, 1); // remove do log da memoria
+			i--;
 		}
 	}
+	reload_log_memory();
 }

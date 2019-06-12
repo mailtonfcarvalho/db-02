@@ -1,12 +1,7 @@
-/**
- * adiciona um log na view de logs
- * - faz tratamento para saber quando mostrar variable e value
- */
-let list_logs_memory = [];
 
 function add_log_disk(log) {
 
-	let log_disk = JSON.parse(localStorage.getItem('log_disk') || '{}');
+	let log_disk = JSON.parse(localStorage.getItem('log_disk') || '[]');
 
 	log_disk.push(log);
 
