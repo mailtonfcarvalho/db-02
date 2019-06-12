@@ -81,24 +81,32 @@
                 </form>
             </div>
             <div class="panel7">
-
+                
             </div>
         </header>
 
        <main>
-            <div class="panel1">
-                    <div class="col">
-                            <h3>Memory logs</h3>
-                        </div>
+            <div class="panel4">
+                <div class="col">
+                    <h3>Locking Table</h3>
+                </div>
 
-                    <div id="logs">
-
-                    </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Lock</th>
+                            <th>Reading number</th>
+                            <th>Transaction lockout</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lock"></tbody>
+                </table>
             </div>
 
             <div class="panel2">
                 <div class="col">
-                    <h3>Memory</h3>
+                    <h3>Variable state</h3>
                 </div>
 
                 <table>
@@ -112,31 +120,36 @@
                     <tbody id="memory"></tbody>
                 </table>
             </div>
+            <div class="panel6">
+                    <div>
+                         <div class="d">
+                             <h3>Disk</h3>
+                         </div>
+                         <div class= "b">
+                             <button onclick="delete_disk()" type="submit" style="background-color: #75b7f5;"> Clear</button>
+                         </div>
+                    </div>
+     
+                     <table>
+                         <thead>
+                             <tr>
+                                 <th>Variable</th>
+                                 <th>Value</th>
+                             </tr>
+                         </thead>
+                         <tbody id="disk"></tbody>
+                     </table>
+                 </div>
 
-            <div class="panel3">
+            <div class="panel1">
                 <div class="col">
-                    <h3>Disk logs</h3>
-                </div>
-                <div id="logs-disk"></div>
-            </div>
-
-             <div class="panel4">
-                <div class="col">
-                    <h3>Locking Table</h3>
+                    <h3>Memory logs</h3>
                 </div>
 
-                <table>
-                     <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Lock</th>
-                            <th>Reading number</th>
-                            <th>Transaction lockout</th>
-                        </tr>
-                    </thead>
-                    <tbody id="lock"></tbody>
-                </table>
-            </div>
+                <div class="scroll">
+                    <div id="logs"></div>
+                </div>
+        </div>
 
              <div class="panel5">
                 <div class="col">
@@ -155,27 +168,15 @@
                 </table>
             </div>
 
-            <div class="panel6">
-               <div>
-                    <div class="d">
-                        <h3>Disk</h3>
+            <div class="panel3">
+                    <div class="col">
+                        <h3>Disk logs</h3>
                     </div>
-                    <div class= "b">
-                        <button onclick="delete_disk()" type="submit" style="background-color: #75b7f5;"> Clear</button>
+                    <div class="scroll">
+                        <div id="logs-disk"></div>
                     </div>
-               </div>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Variable</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody id="disk"></tbody>
-                </table>
-            </div>
-
+    
+                </div>
        </main>
        <footer>
 

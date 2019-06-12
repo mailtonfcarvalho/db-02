@@ -26,6 +26,7 @@ footer{
   border-radius:0px 0px 7px 7px; 
 }
 .titulo {
+  margin-left: 5%;
  color: rgb(1, 4, 19);
 }
 .panel0 {
@@ -39,9 +40,8 @@ footer{
 .panel7 {
   background:white;
   position: relative;
-  margin-top: 0.5%;
   width: 90%;
-  height: 37%;
+  height: 35%;
   border-radius:7px 7px 0px 0px; 
 }
 /* Memory logs */
@@ -51,7 +51,7 @@ footer{
   float:left;
   width: 30%;
   height: 50%;
-  overflow:auto;
+  margin-top: 0.5%;
 }
 .panel2 {
   background: white;
@@ -71,6 +71,7 @@ footer{
   height: 50%;
   height: 50%;
   margin-left: 1%;
+  margin-top: 0.5%;
   overflow:auto;
 }
 /* Locking Table */
@@ -80,7 +81,6 @@ footer{
   float:left;
   width: 30%;
   height: 50%;
-  margin-top: 0.5%;
   overflow:auto;
 }
 /* Transaction Status  */
@@ -102,7 +102,6 @@ footer{
   width: 29%;
   height: 50%;
   margin-left: 1%;
-  margin-top: 0.5%;
   overflow:auto;
 }
 table {
@@ -162,4 +161,10 @@ th, td {
   float:left;
   margin-left: 60%;
   margin-top: 5%;
+}
+.scroll{
+  position: relative;
+  width: 100%;
+  height: 75%;
+  overflow:auto;
 }
