@@ -33,26 +33,21 @@ footer{
   background: white;
   position: relative;
   width: 90%;
-  height: 70%;
+  height: 100%;
   border-radius:7px;
 }
-/* Div superior*/
-.panel7 {
-  background:white;
-  position: relative;
-  width: 90%;
-  height: 35%;
-  border-radius:7px 7px 0px 0px;
-}
-/* Memory logs */
+
+/* Locking Table */
 .panel1 {
   background: white;
   position: relative;
   float:left;
   width: 30%;
   height: 50%;
-  margin-top: 0.5%;
+  overflow:auto;
+  border-radius:7px 0px 0px 0px;
 }
+/* Variable state*/
 .panel2 {
   background: white;
   position: relative;
@@ -62,26 +57,25 @@ footer{
   margin-left: 1%;
   overflow:auto;
 }
-/* Disk logs */
+/* Disk */
 .panel3 {
   background: white;
   position: relative;
   float:left;
   width: 29%;
   height: 50%;
-  height: 50%;
   margin-left: 1%;
-  margin-top: 0.5%;
+  border-radius:0px 7px 0px 0px;
   overflow:auto;
 }
-/* Locking Table */
+/* Memory logs */
 .panel4 {
   background: white;
   position: relative;
   float:left;
   width: 30%;
   height: 50%;
-  overflow:auto;
+  margin-top: 0.5%;
 }
 /* Transaction Status  */
 .panel5 {
@@ -94,14 +88,16 @@ footer{
   margin-top: 0.5%;
   overflow:auto;
 }
-/* Disk */
+/* Disk logs */
 .panel6 {
   background: white;
   position: relative;
   float:left;
   width: 29%;
   height: 50%;
+  height: 50%;
   margin-left: 1%;
+  margin-top: 0.5%;
   overflow:auto;
 }
 table {
@@ -134,7 +130,7 @@ th, td {
   position: relative;
   float: left;
   margin-left: 15px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .nome{
   margin-left:5%;
@@ -182,7 +178,6 @@ select, input {
   align-items: center;
   padding: 0 10px;
 }
-
 .scroll{
   position: relative;
   width: 100%;
