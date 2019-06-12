@@ -2,7 +2,9 @@
  * adiciona um log na view de logs
  * - faz tratamento para saber quando mostrar variable e value
  */
-function add_logs(transaction, operation, variable, value) {
+let list_logs_memory = [];
+
+function add_log_memory(transaction, operation, variable, value) {
 
 	var txt_write = [
 		'begin_transaction',
@@ -17,8 +19,31 @@ function add_logs(transaction, operation, variable, value) {
 		txt_write += `, ${value}`;
 	}
 
+	list_logs_memory.push({
+		transaction: transaction,
+		value: `${transaction}: ${operation}(${txt_write})`,
+	});
 
-	$('#logs').append(`<div class="item-log">
-		${transaction}: ${operation}(${txt_write})
-	</div>`);
+	reload_log_memory();
+}
+
+function reload_log_memory() {
+	let view_logs = $('#logs').empty();
+
+	for (let i in list_logs_memory) {
+		view_logs.append(`<div class="item-log">
+			${list_logs_memory[i].value}
+		</div>`);
+	}
+}
+
+function push_log_to_disk(transaction) {
+	for (let i = 0 ; i < list_logs_memory.length ; i++) {
+		if (list_logs_memory[i].transaction == transaction) {
+			add_log_disk(list_logs_memory[i]); // coloca no log do disco
+			list_logs_memory.splice(i, 1); // remove do log da memoria
+			i--;
+		}
+	}
+	reload_log_memory();
 }
