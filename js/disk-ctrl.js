@@ -16,10 +16,11 @@ function edit_disk(variable, value) {
  */
 function delete_disk() {
 	localStorage.removeItem('disk');
+	localStorage.removeItem('log_disk');
 	reload_disk();
+	reload_log_disk();
 	return true;
 }
-
 /**
  * recarrega a exibição de acordo com o que ta na persistencia
  */
