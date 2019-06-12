@@ -26,6 +26,7 @@ footer{
   border-radius:0px 0px 7px 7px;
 }
 .titulo {
+  margin-left: 5%;
  color: rgb(1, 4, 19);
 }
 .panel0 {
@@ -39,9 +40,8 @@ footer{
 .panel7 {
   background:white;
   position: relative;
-  margin-top: 0.5%;
   width: 90%;
-  height: 37%;
+  height: 35%;
   border-radius:7px 7px 0px 0px;
 }
 /* Memory logs */
@@ -51,7 +51,7 @@ footer{
   float:left;
   width: 30%;
   height: 50%;
-  overflow:auto;
+  margin-top: 0.5%;
 }
 .panel2 {
   background: white;
@@ -71,6 +71,7 @@ footer{
   height: 50%;
   height: 50%;
   margin-left: 1%;
+  margin-top: 0.5%;
   overflow:auto;
 }
 /* Locking Table */
@@ -80,7 +81,6 @@ footer{
   float:left;
   width: 30%;
   height: 50%;
-  margin-top: 0.5%;
   overflow:auto;
 }
 /* Transaction Status  */
@@ -102,7 +102,6 @@ footer{
   width: 29%;
   height: 50%;
   margin-left: 1%;
-  margin-top: 0.5%;
   overflow:auto;
 }
 table {
@@ -168,7 +167,7 @@ button {
   background-color: #75b7f5;
   border-radius: 5px;
   min-width: 70px;
-  padding: 3px;
+  padding: 4px;
   text-decoration:none;
   border:1px solid #5884ae;
 }
@@ -183,3 +182,11 @@ select, input {
   align-items: center;
   padding: 0 10px;
 }
+
+.scroll{
+  position: relative;
+  width: 100%;
+  height: 75%;
+  overflow:auto;
+}
+
