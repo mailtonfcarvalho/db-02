@@ -35,6 +35,9 @@ function reload_log_memory() {
 			${list_logs_memory[i].value}
 		</div>`);
 	}
+
+	let div = view_logs.parent();
+	div.animate({scrollTop: div.prop('scrollHeight')}, 500);
 }
 
 function push_log_to_disk(transaction) {
