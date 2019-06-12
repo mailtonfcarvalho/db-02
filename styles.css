@@ -83,7 +83,6 @@ footer{
   margin-top: 0.5%;
   overflow:auto;
 }
-
 /* Transaction Status  */
 .panel5 {
   background: white;
@@ -95,9 +94,7 @@ footer{
   margin-top: 0.5%;
   overflow:auto;
 }
-
 /* Disk */
-
 .panel6 {
   background: white;
   position: relative;
@@ -108,10 +105,6 @@ footer{
   margin-top: 0.5%;
   overflow:auto;
 }
-
-
-
-
 table {
   border-spacing: 0;
   border-collapse: collapse;
