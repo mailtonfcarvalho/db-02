@@ -48,6 +48,7 @@ $(function() {
 	 * carrega dados persistentes no disco
 	 */
 	reload_disk();
+	reload_log_disk();
 });
 
 /**
@@ -154,7 +155,7 @@ function run_command(transaction, operation, variable, value) {
 			break;
 	}
 	if (next) {
-		add_logs(transaction, operation, variable, value)
+		add_log_memory(transaction, operation, variable, value)
 	}
 }
 
