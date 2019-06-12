@@ -20,4 +20,7 @@ function reload_log_disk() {
 			${log_disk[i].value}
 		</div>`);
 	}
+
+	let div = view_logs.parent();
+	div.animate({scrollTop: div.prop('scrollHeight')}, 500);
 }
