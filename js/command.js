@@ -149,7 +149,7 @@ function run_command(transaction, operation, variable, value) {
 				transaction_unlock(transaction);
 				delete_items_transaction_in_memory(transaction);
 				change_transaction(transaction, 'wait-die');
-				operation = 'rollback';
+				operation = 'abort';
 			}
 			break;
 	}
