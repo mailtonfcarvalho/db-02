@@ -23,7 +23,7 @@ footer{
   height:10px;
   background: white;
   margin-left: 5%;
-  border-radius:0px 0px 7px 7px; 
+  border-radius:0px 0px 7px 7px;
 }
 .titulo {
  color: rgb(1, 4, 19);
@@ -42,7 +42,7 @@ footer{
   margin-top: 0.5%;
   width: 90%;
   height: 37%;
-  border-radius:7px 7px 0px 0px; 
+  border-radius:7px 7px 0px 0px;
 }
 /* Memory logs */
 .panel1 {
@@ -144,11 +144,11 @@ th, td {
   margin-top: 5%;
 }
 .radio{
-  margin-left: 20%; 
+  margin-left: 20%;
   margin-top: 5%;
 }
 .botton{
-  background-color: #75b7f5; 
+  background-color: #75b7f5;
   margin-left:20%;
   margin-top: 10%;
 }
@@ -162,4 +162,24 @@ th, td {
   float:left;
   margin-left: 60%;
   margin-top: 5%;
+}
+
+button {
+  background-color: #75b7f5;
+  border-radius: 5px;
+  min-width: 70px;
+  padding: 3px;
+  text-decoration:none;
+  border:1px solid #5884ae;
+}
+
+select, input {
+  padding: 3px;
+}
+
+.title-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
 }
