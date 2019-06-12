@@ -116,11 +116,7 @@ function run_command(transaction, operation, variable, value) {
 		case 'end_transaction':
 			next = check_has_not_locking(transaction);
 			if (next) {
-				if (has_items_in_memory(transaction)) {
-					change_transaction(transaction, 'finished');
-				} else {
-					next = end_transaction(transaction);
-				}
+				change_transaction(transaction, 'finished');
 			}
 			break;
 
